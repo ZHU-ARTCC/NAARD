@@ -1,0 +1,9 @@
+[package]
+name = "aixm"
+version = "0.1.0"
+authors = ["cpage"]
+edition = "2018"
+
+[dependencies]
+quick-xml = "0.14"
+custom_error = "1.6.0"

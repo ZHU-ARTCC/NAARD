@@ -1,0 +1,9 @@
+[package]
+name = "naard"
+version = "0.1.0"
+authors = ["cpage"]
+edition = "2018"
+
+[dependencies]
+aixm = {path = "aixm"}
+rusqlite = "0.17.0"
