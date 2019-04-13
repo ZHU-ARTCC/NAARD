@@ -7,8 +7,8 @@ use std::io::BufRead;
 
 #[derive(Debug, Clone, Copy)]
 pub struct Point {
-    x: f32,
-    y: f32,
+    pub x: f32,
+    pub y: f32,
 }
 
 impl ParseElement for Point {
@@ -21,29 +21,49 @@ impl ParseElement for Point {
         let split: StdResult<Vec<_>, _> =
             text.split_whitespace().take(2).map(|s| s.parse()).collect();
 
-        split
-            .map(|v| Point { x: v[0], y: v[1] })
-            .map_err(|e| Error::BadElement)
+        if let Ok(split) = split {
+            if split.len() == 2 {
+                Ok(Point {
+                    x: split[0],
+                    y: split[1],
+                })
+            } else {
+                Err(Error::BadElement)
+            }
+        } else {
+            Err(Error::BadElement)
+        }
     }
 }
 
 #[derive(Debug, Clone, Copy)]
 pub struct ElevatedPoint {
-    point: Option<Point>,
-    elevation: f32,
+    pub point: Option<Point>,
+    pub elevation: Option<f32>,
 }
 
 impl ParseElement for ElevatedPoint {
     element_name!(b"aixm:ElevatedPoint");
 
-    fn parse_inner<B: BufRead>(xml: &mut Reader<B>, element_name: &'static [u8]) -> Result<Self> {
+    fn parse_inner<B: BufRead>(
+        xml: &mut Reader<B>,
+        tag: &BytesStart,
+        element_name: &'static [u8],
+    ) -> Result<Self> {
         let mut point = None;
-        let elevation = None;
+        let mut elevation = None;
         let mut buf = Vec::new();
         loop {
             match xml.read_event(&mut buf)? {
                 Event::Start(ref event) if event.name() == Point::element_name() => {
-                    point = Some(Point::parse(xml)?);
+                    point = Some(Point::parse(xml, event)?);
+                }
+                Event::Start(ref event) if event.name() == b"aixm:elevation" => {
+                    elevation = Some(
+                        xml.read_text(b"aixm:elevation", &mut buf)?
+                            .parse()
+                            .map_err(|_| Error::BadElement)?,
+                    );
                 }
                 Event::End(ref event) if event.name() == element_name => break,
                 Event::Eof => return Err(Error::BadElement),
@@ -52,10 +72,7 @@ impl ParseElement for ElevatedPoint {
             buf.clear();
         }
 
-        match elevation {
-            Some(elevation) => Ok(ElevatedPoint { point, elevation }),
-            _ => Err(Error::BadElement),
-        }
+        Ok(ElevatedPoint { point, elevation })
     }
 }
 
@@ -65,9 +82,14 @@ pub struct AptElevatedPoint(pub ElevatedPoint);
 impl ParseElement for AptElevatedPoint {
     element_name!(b"apt:ElevatedPoint");
 
-    fn parse_inner<B: BufRead>(xml: &mut Reader<B>, element_name: &'static [u8]) -> Result<Self> {
+    fn parse_inner<B: BufRead>(
+        xml: &mut Reader<B>,
+        tag: &BytesStart,
+        element_name: &'static [u8],
+    ) -> Result<Self> {
         Ok(AptElevatedPoint(ElevatedPoint::parse_inner(
             xml,
+            tag,
             element_name,
         )?))
     }
