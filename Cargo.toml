@@ -3,7 +3,11 @@ name = "naard"
 version = "0.1.0"
 authors = ["cpage"]
 edition = "2018"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 aixm = {path = "aixm"}
-rusqlite = "0.17.0"
+
+[dependencies.rusqlite]
+features = ["bundled"]
+version = "0.17.0"
