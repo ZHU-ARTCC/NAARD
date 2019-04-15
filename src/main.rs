@@ -1,12 +1,20 @@
 use rusqlite::{params, Connection, config::DbConfig};
 use std::error::Error;
 use std::fs;
+use std::path::PathBuf;
 use std::io;
 use std::io::BufReader;
-
+use structopt::StructOpt;
 use aixm::airport::{AirportScan, RunwayScan};
 
 static DB_DDL: &'static str = include_str!("sql/ddl.sql");
+
+#[derive(Debug, StructOpt)]
+struct Args {
+    input: PathBuf,
+    #[structopt(default_value = "naard.db")]
+    output: PathBuf
+}
 
 #[inline]
 fn reset_reader<B: io::Read + io::Seek>(mut reader: B) {
@@ -14,15 +22,16 @@ fn reset_reader<B: io::Read + io::Seek>(mut reader: B) {
 }
 
 fn main() -> Result<(), Box<Error>> {
-    match fs::remove_file("naard.db") {
+    let args = Args::from_args();
+    match fs::remove_file(&args.output) {
         Ok(_) => (),
         Err(ref e) if e.kind() == io::ErrorKind::NotFound => (),
         Err(e) => return Err(e.into()),
     }
 
-    let mut apt = BufReader::new(fs::File::open("C:\\Users\\Carson\\Documents\\vZHU\\NASR\\Additional_Data\\AIXM\\AIXM_5.1\\XML-Subscriber-Files\\APT_AIXM.xml")?);
+    let mut apt = BufReader::new(fs::File::open(args.input)?);
 
-    let mut conn = Connection::open("naard.db")?;
+    let mut conn = Connection::open(&args.output)?;
     // Enable FK enforcement
     conn.set_db_config(DbConfig::SQLITE_DBCONFIG_ENABLE_FKEY, true)?;
 
@@ -55,12 +64,31 @@ fn main() -> Result<(), Box<Error>> {
             "INSERT INTO runway (id, designator, associated_airport) VALUES (?,?,?)",
         )?;
 
+        let mut runway_end_stmt = bulk_load_tx.prepare(
+            "INSERT INTO runway_end (runway, designator, base_end) VALUES (?,?,?)",
+        )?;
+
         for runway in RunwayScan::from_reader(&mut apt).flat_map(|x| x) {
-            let res = runway_stmt.execute(params![
-                runway.id,
-                runway.designator,
-                runway.assoc_airport
-            ]);
+            
+            let res = if runway.id.contains("END") {     
+                let (base_id, is_base) = if runway.id.contains("BASE") {
+                    (runway.id.replace("BASE_END_", ""), true)
+                } else {
+                    (runway.id.replace("RECIPROCAL_END_", ""), false)
+                };
+                
+                runway_end_stmt.execute(params![
+                    base_id,
+                    runway.designator,
+                    is_base
+                ])
+            } else {
+                runway_stmt.execute(params![
+                    runway.id,
+                    runway.designator,
+                    runway.assoc_airport
+                ])
+            };
 
             if let Err(res) = res {
                 println!("{:?}\n--FAILING STRUCT--\n{:?}", res, runway);

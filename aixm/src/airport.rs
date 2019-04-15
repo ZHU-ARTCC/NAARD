@@ -6,37 +6,6 @@ use quick_xml::events::*;
 use quick_xml::Reader;
 use std::io::BufRead;
 
-// pub struct Airports<'a, B: BufRead + 'a> {
-//     xml: &'a mut Reader<B>,
-//     buf: Vec<u8>,
-// }
-
-// impl<'a, B: BufRead> Airports<'a, B> {
-//     pub fn from_reader(reader: &'a mut Reader<B>) -> Self {
-//         Airports {
-//             xml: reader,
-//             buf: Vec::new(),
-//         }
-//     }
-// }
-
-// impl<'a, B: BufRead> Iterator for Airports<'a, B> {
-//     type Item = Result<AirportHeliport>;
-//     fn next(&mut self) -> Option<Self::Item> {
-//         loop {
-//             self.buf.clear();
-//             match self.xml.read_event(&mut self.buf) {
-//                 Ok(Event::Start(ref event)) if event.name() == AirportHeliport::element_name() => {
-//                     return Some(AirportHeliport::parse(&mut self.xml, event))
-//                 }
-//                 Ok(Event::Eof) => return None,
-//                 Ok(_) => (),
-//                 Err(_) => return None,
-//             }
-//         }
-//     }
-// }
-
 create_scan_iter!(AirportScan, AirportHeliport);
 
 #[derive(Debug, Clone)]
