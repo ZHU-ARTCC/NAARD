@@ -14,12 +14,12 @@ pub struct Point {
 impl ParseElement for Point {
     element_name!(b"gml:pos");
 
-    fn parse_inner<B: BufRead>(xml: &mut Reader<B>, element_name: &'static [u8]) -> Result<Self> {
+    fn parse_inner<B: BufRead>(xml: &mut Reader<B>, _: &BytesStart, element_name: &'static [u8]) -> Result<Self> {
         let mut buf = Vec::new();
         let text = xml.read_text(element_name, &mut buf)?;
 
         let split: StdResult<Vec<_>, _> =
-            text.split_whitespace().take(2).map(|s| s.parse()).collect();
+            text.split_whitespace().take(2).map(str::parse).collect();
 
         if let Ok(split) = split {
             if split.len() == 2 {
@@ -47,7 +47,7 @@ impl ParseElement for ElevatedPoint {
 
     fn parse_inner<B: BufRead>(
         xml: &mut Reader<B>,
-        tag: &BytesStart,
+        _: &BytesStart,
         element_name: &'static [u8],
     ) -> Result<Self> {
         let mut point = None;

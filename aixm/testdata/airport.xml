@@ -1,0 +1,246 @@
+<faa:Member>
+<aixm:AirportHeliport gml:id="AH_0000004">
+    <aixm:timeSlice>
+    <aixm:AirportHeliportTimeSlice gml:id="AIRPORT_HELIPORT_TS_0000004">
+        <gml:validTime>
+        <gml:TimePeriod gml:id="AIRPORT_HELIPORT_TIME_PERIOD_0000004">
+            <gml:beginPosition>2019-02-28T00:00:00.000-05:00</gml:beginPosition>
+            <gml:endPosition indeterminatePosition="unknown"/>
+        </gml:TimePeriod>
+        </gml:validTime>
+        <aixm:interpretation>BASELINE</aixm:interpretation>
+        <aixm:featureLifetime>
+        <gml:TimePeriod gml:id="FEATURE_LIFETIME_TP_0000004">
+            <gml:beginPosition>1966-07-01T00:00:00.000-04:00</gml:beginPosition>
+            <gml:endPosition/>
+        </gml:TimePeriod>
+        </aixm:featureLifetime>
+        <aixm:designator>KKI</aixm:designator>
+        <aixm:name>AKIACHAK</aixm:name>
+        <aixm:type>OTHER</aixm:type>
+        <aixm:privateUse>NO</aixm:privateUse>
+        <aixm:controlType>CIVIL</aixm:controlType>
+        <aixm:fieldElevation uom="FT">18.0</aixm:fieldElevation>
+        <aixm:magneticVariation>19</aixm:magneticVariation>
+        <aixm:dateMagneticVariation>1985</aixm:dateMagneticVariation>
+        <aixm:windDirectionIndicator>NO</aixm:windDirectionIndicator>
+        <aixm:servedCity>
+        <aixm:City gml:id="AIRPORT_HELIPORT_CITY_PROPERTY_0000004">
+            <aixm:name>AKIACHAK</aixm:name>
+        </aixm:City>
+        </aixm:servedCity>
+        <aixm:responsibleOrganisation>
+        <aixm:AirportHeliportResponsibilityOrganisation gml:id="AIRPORT_HELIPORT_ORGANISATION_AUTHORITY_ID_0000004">
+            <aixm:theOrganisationAuthority xlink:href="#/faa:SubscriberFile/faa:Member/aixm:OrganisationAuthority%5B@gml:id ='OA_0000004'%5D"/>
+        </aixm:AirportHeliportResponsibilityOrganisation>
+        </aixm:responsibleOrganisation>
+        <aixm:ARP>
+        <aixm:ElevatedPoint gml:id="AIRPORT_HELIPORT_ELEVATED_POINT_ARP_0000004" srsName="urn:ogc:def:crs:OGC:1.3:CRS83">
+            <gml:pos>-161.435077 60.907865</gml:pos>
+        </aixm:ElevatedPoint>
+        </aixm:ARP>
+        <aixm:annotation>
+        <aixm:Note gml:id="SEAPLANE_BASE_ID_0000004">
+            <aixm:propertyName>type</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="SEAPLANE_BASE_NOTE_ID0000004_0">
+                <aixm:note>THIS LANDING FACILITY IS A SEAPLANE BASE</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_NAME_ID_0_0000004">
+            <aixm:propertyName>remarkName</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_NAME_NOTE_ID_0_0000004">
+                <aixm:note>A110-1</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_TEXT_ID_0_0000004">
+            <aixm:propertyName>remarkText</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_TEXT_NOTE_ID_0_0000004">
+                <aixm:note>NO SERVICES OR DOCK. BEACHING AREA ADJACENT TO VILLAGE.</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_NAME_ID_1_0000004">
+            <aixm:propertyName>remarkName</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_NAME_NOTE_ID_1_0000004">
+                <aixm:note>A110-2</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_TEXT_ID_1_0000004">
+            <aixm:propertyName>remarkText</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_TEXT_NOTE_ID_1_0000004">
+                <aixm:note>WX CAMERA AVBL ON INTERNET AT HTTP://AVCAMS.FAA.GOV</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_NAME_ID_2_0000004">
+            <aixm:propertyName>remarkName</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_NAME_NOTE_ID_2_0000004">
+                <aixm:note>A110-3</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_TEXT_ID_2_0000004">
+            <aixm:propertyName>remarkText</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_TEXT_NOTE_ID_2_0000004">
+                <aixm:note>BE ALERT OF ARPT TRAFFIC NW OF WATERWAY AREA.</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_NAME_ID_3_0000004">
+            <aixm:propertyName>remarkName</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_NAME_NOTE_ID_3_0000004">
+                <aixm:note>A110-4</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_TEXT_ID_3_0000004">
+            <aixm:propertyName>remarkText</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_TEXT_NOTE_ID_3_0000004">
+                <aixm:note>RIVER HAS TIDAL INFLUENCE. BE ALERT OF TIDAL FLATS INVOF LANDING AND BEACHING AREA. INSPECT BEFORE LANDING.</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_NAME_ID_4_0000004">
+            <aixm:propertyName>remarkName</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_NAME_NOTE_ID_4_0000004">
+                <aixm:note>A110-5</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_TEXT_ID_4_0000004">
+            <aixm:propertyName>remarkText</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_TEXT_NOTE_ID_4_0000004">
+                <aixm:note>60 FT TREES AT EITHER END OF THE WATER LANDING AREA.</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_NAME_ID_5_0000004">
+            <aixm:propertyName>remarkName</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_NAME_NOTE_ID_5_0000004">
+                <aixm:note>A110-6</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_TEXT_ID_5_0000004">
+            <aixm:propertyName>remarkText</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_TEXT_NOTE_ID_5_0000004">
+                <aixm:note>SHOALING IN THE LANDING AREA. BE AWARE OF POSSIBLE SHALLOW WATER.</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_NAME_ID_6_0000004">
+            <aixm:propertyName>remarkName</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_NAME_NOTE_ID_6_0000004">
+                <aixm:note>A30-NW/SE</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_TEXT_ID_6_0000004">
+            <aixm:propertyName>remarkText</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_TEXT_NOTE_ID_6_0000004">
+                <aixm:note>SEAPLANES LND NW-SE IN LAGOON; TKOF E-W IN RIVER.</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_NAME_ID_7_0000004">
+            <aixm:propertyName>remarkName</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_NAME_NOTE_ID_7_0000004">
+                <aixm:note>A54-E</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:annotation>
+        <aixm:Note gml:id="REMARK_TEXT_ID_7_0000004">
+            <aixm:propertyName>remarkText</aixm:propertyName>
+            <aixm:translatedNote>
+            <aixm:LinguisticNote gml:id="REMARK_TEXT_NOTE_ID_7_0000004">
+                <aixm:note>TREES ALONG THE SHORELINE MAY OBSTRUCT APCHS.</aixm:note>
+            </aixm:LinguisticNote>
+            </aixm:translatedNote>
+        </aixm:Note>
+        </aixm:annotation>
+        <aixm:extension>
+        <apt:AirportHeliportExtension gml:id="AIRPORT_HELIPORT_EXTENSION_0000004">
+            <apt:airportSiteNumber>50017.1*C</apt:airportSiteNumber>
+            <apt:faaDistrictOrFieldOfficeCode>NONE</apt:faaDistrictOrFieldOfficeCode>
+            <apt:administativeArea>AK</apt:administativeArea>
+            <apt:locationDescription>00S</apt:locationDescription>
+            <apt:ownershipType>PU</apt:ownershipType>
+            <apt:referencePointDeterminationMethod>E</apt:referencePointDeterminationMethod>
+            <apt:elevationDeterminationMethod>E</apt:elevationDeterminationMethod>
+            <apt:aeronauticalSectionalChart>MC GRATH</apt:aeronauticalSectionalChart>
+            <apt:countyName>BETHEL</apt:countyName>
+            <apt:countyStatePostOfficeCode>AK</apt:countyStatePostOfficeCode>
+            <apt:statusCode>O</apt:statusCode>
+            <apt:analysisDetermination>NO OBJECTION</apt:analysisDetermination>
+            <apt:inspectionMethod>S</apt:inspectionMethod>
+            <apt:inspectionAgency>C</apt:inspectionAgency>
+            <apt:lastInspectionDate>2017-06-30</apt:lastInspectionDate>
+            <apt:trafficControlTowerOnAirport>NO</apt:trafficControlTowerOnAirport>
+            <apt:segmentedCircleMarkerOnAirport>N</apt:segmentedCircleMarkerOnAirport>
+            <apt:landingFeeChargedToNonCommercialUsers>NO</apt:landingFeeChargedToNonCommercialUsers>
+            <apt:generalAviationItinerantOperations>000010</apt:generalAviationItinerantOperations>
+            <apt:annualOperationEndDate>2016-12-31</apt:annualOperationEndDate>
+            <apt:airportAttendanceScheduleSequenceNumber>1</apt:airportAttendanceScheduleSequenceNumber>
+            <apt:airportAttendanceSchedule>UNATNDD</apt:airportAttendanceSchedule>
+            <apt:designatedAsIntlAptOfEntry>NO</apt:designatedAsIntlAptOfEntry>
+            <apt:designatedAsLandingAirport>NO</apt:designatedAsLandingAirport>
+            <apt:grantsMilitarylanding>NO</apt:grantsMilitarylanding>
+            <apt:stateName>ALASKA</apt:stateName>
+            <apt:faaRegionCode>AAL</apt:faaRegionCode>
+        </apt:AirportHeliportExtension>
+        </aixm:extension>
+    </aixm:AirportHeliportTimeSlice>
+    </aixm:timeSlice>
+</aixm:AirportHeliport>
+</faa:Member>
